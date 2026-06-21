@@ -3,7 +3,7 @@
 -- что при переносе ничего не потерялось
 SELECT 
     c.company_name AS company,
-    COUNT(p.procedure_code) AS procedure count,
+    COUNT(p.procedure_code) AS procedure_   count,
     SUM(p.initial_amount) AS budget
 FROM procurement p
 JOIN companies c ON p.company_id = c.id
