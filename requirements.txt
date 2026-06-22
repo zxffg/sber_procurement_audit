@@ -1,11 +1,13 @@
 # Работа с данными
-pandas
+pandas>=2.2.0
 numpy
+scipy
 
 # Чтение Excel-файлов для SQL
 openpyxl
 
 # HTTP-запросы для локального API (Ollama)
+tqdm
 requests
 
 # Визуализация

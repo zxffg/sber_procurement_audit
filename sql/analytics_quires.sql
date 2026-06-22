@@ -3,7 +3,7 @@
 -- что при переносе ничего не потерялось
 SELECT 
     c.company_name AS company,
-    COUNT(p.procedure_code) AS procedure_   count,
+    COUNT(p.procedure_code) AS procedure_count,
     SUM(p.initial_amount) AS budget
 FROM procurement p
 JOIN companies c ON p.company_id = c.id
@@ -33,7 +33,7 @@ SELECT
     SUM(p.initial_amount) AS budget,
     ROUND(SUM(p.initial_amount) * 100.0 / (SELECT SUM(initial_amount) FROM procurement), 2) AS fraction_by_budget
 FROM procurement p
-JOIN pocurement_methods pm ON p.method_id = pm.id
+JOIN procurement_methods pm ON p.method_id = pm.id
 GROUP BY pm.method_name
 ORDER BY budget DESC;
 
@@ -48,7 +48,7 @@ SELECT
     (p.deadline_at - p.published_at) AS sudmission_deadline
 FROM procurement p
 JOIN companies c ON p.company_id = c.id
-WHERE (p.deadline_at - p.published_at) < 5 
+WHERE (p.deadline_at - p.published_at) < INTERVAL '5 days'
   AND p.initial_amount > 10000000.00
 ORDER BY 5 ASC, 4 DESC;
 
@@ -60,6 +60,6 @@ SELECT
     SUM(p.initial_amount) AS budget,
     AVG(p.initial_amount) AS average
 FROM procurement p
-JOIN pocurement_types pt ON p.type_id = pt.id
+JOIN procurement_types pt ON p.type_id = pt.id
 GROUP BY pt.type_name
 ORDER BY 3 DESC;
