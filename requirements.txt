@@ -1,0 +1,16 @@
+# Работа с данными
+pandas
+numpy
+
+# Чтение Excel-файлов для SQL
+openpyxl
+
+# HTTP-запросы для локального API (Ollama)
+requests
+
+# Визуализация
+matplotlib
+seaborn
+
+# Окружение
+jupyter
