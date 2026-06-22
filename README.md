@@ -48,5 +48,5 @@
    ```bash
    git clone git@github.com:zxffg/sber_procurement_audit.git
 3. Откройте терминал в корневой папке проекта и установите все необходимые зависимости:
-```bash
-   pip install -r requirements.txt
+   ```bash
+      pip install -r requirements.txt
