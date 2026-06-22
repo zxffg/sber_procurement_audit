@@ -49,5 +49,5 @@
    ```
 3. Откройте терминал в корневой папке проекта и установите все необходимые зависимости:
    ```bash
-      pip install -r requirements.txt
+   pip install -r requirements.txt
    ```

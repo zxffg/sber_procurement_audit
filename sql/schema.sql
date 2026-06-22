@@ -33,10 +33,10 @@ CREATE TABLE procurement_status (
 CREATE TABLE procurement (
     procedure_code VARCHAR(30) PRIMARY KEY,
     company_id INT REFERENCES companies(id) ON DELETE RESTRICT,
-    method_id INT REFERENCES pocurement_methods(id) ON DELETE RESTRICT,
+    method_id INT REFERENCES procurement_methods(id) ON DELETE RESTRICT,
     platform_id INT REFERENCES platforms(id) ON DELETE RESTRICT,
     type_id INT REFERENCES procurement_types(id) ON DELETE RESTRICT,
-    status_id INT REFERENCES prrocurement_status(id) ON DELETE RESTRICT,
+    status_id INT REFERENCES procurement_status(id) ON DELETE RESTRICT,
 
     title TEXT NOT NULL,
     initial_amount NUMERIC(15, 2) NOT NULL DEFAULT 0.00,
