@@ -31,7 +31,7 @@ SELECT
     COUNT(p.procedure_code) AS count_procedure,
     ROUND(COUNT(p.procedure_code) * 100.0 / (SELECT COUNT(*) FROM procurement), 2) AS fraction_by_amount,
     SUM(p.initial_amount) AS budget,
-    ROUND(SUM(p.initial_amount) * 100.0 / (SELECT SUM(initial_amount) FROM procurement_flat), 2) AS fraction_by_amount
+    ROUND(SUM(p.initial_amount) * 100.0 / (SELECT SUM(initial_amount) FROM procurement_flat), 2) AS fraction_by_sum
 FROM procurement p
 JOIN procurement_methods pm ON p.method_id = pm.id
 GROUP BY pm.method_name
